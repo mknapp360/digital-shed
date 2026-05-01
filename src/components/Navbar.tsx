@@ -1,36 +1,67 @@
-interface NavbarProps {
-  onBook: () => void
-}
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
-export default function Navbar({ onBook }: NavbarProps) {
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  const links = [
+    { label: 'Home', href: '/' },
+    { label: 'For Sellers', href: '#sellers' },
+    { label: 'For Investors', href: '#investors' },
+    { label: 'Our Approach', href: '#approach' },
+    { label: 'About Us', href: '#about' },
+    { label: 'Contact', href: '#contact' },
+  ]
+
   return (
-    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-gray-100 z-50">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center">
-          <img src="/logo.png" alt="YOUR_BRAND_NAME" className="h-8 w-auto" />
+    <nav className="fixed top-0 w-full bg-brand-dark z-50" aria-label="Main navigation">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        {/* Logo */}
+        <a href="/" className="flex items-center flex-shrink-0">
+          <img src="/logo.png" alt="Thérayan Partners" className="h-10 w-auto" />
         </a>
-        <div className="flex items-center gap-8">
-          <a href="#what-we-build" className="hidden sm:block text-sm text-gray-600 hover:text-gray-900 transition-colors">
-            What we build
-          </a>
-          <a href="#how-it-works" className="hidden sm:block text-sm text-gray-600 hover:text-gray-900 transition-colors">
-            How it works
-          </a>
-          <a href="#contact" className="hidden sm:block text-sm text-gray-600 hover:text-gray-900 transition-colors">
-            Get in touch
-          </a>
-          <span className="hidden sm:block text-gray-300">|</span>
-          <a href="tel:YOUR_PHONE_NUMBER" className="hidden sm:block text-base font-bold text-gray-700 hover:text-brand-green transition-colors">
-            YOUR_PHONE_NUMBER
-          </a>
-          <button
-            onClick={onBook}
-            className="bg-brand-green text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-green-700 transition-colors"
-          >
-            Book a conversation
-          </button>
+
+        {/* Desktop links */}
+        <div className="hidden lg:flex items-center gap-8">
+          {links.map(link => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-sm font-medium text-white/80 hover:text-brand-green transition-colors tracking-wide uppercase"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
+
+        {/* Mobile toggle */}
+        <button
+          className="lg:hidden text-white/80 hover:text-white"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="lg:hidden bg-brand-dark border-t border-white/10">
+          <div className="px-6 py-4 flex flex-col gap-4">
+            {links.map(link => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-sm font-medium text-white/80 hover:text-brand-green transition-colors tracking-wide uppercase"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

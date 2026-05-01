@@ -1,134 +1,127 @@
-import { Users, CalendarCheck, CreditCard, FileText, MessageSquare, ShieldCheck } from 'lucide-react'
-import { UserCheck, Filter, FolderOpen, CheckCircle } from 'lucide-react'
+import { Handshake, Target, ShieldCheck, TrendingUp, ArrowRight } from 'lucide-react'
 
-const pipeline = [
-  { icon: Users,       label: 'Lead\nCaptured' },
-  { icon: Filter,      label: 'Lead\nQualified' },
-  { icon: UserCheck,   label: 'Client\nOnboarded' },
-  { icon: FolderOpen,  label: 'Case\nManaged' },
-  { icon: CreditCard,  label: 'Payment\nReceived' },
-  { icon: CheckCircle, label: 'Work\nCompleted' },
-]
-
-const capabilities = [
+const trustItems = [
   {
-    icon: Users,
-    title: 'Every lead captured and tracked automatically',
-    description: 'From first contact to qualified deal — no spreadsheets, no missed opportunities.',
+    icon: Handshake,
+    title: 'Win-Win Outcomes',
+    description: 'Strong results for sellers. Quality assets for investors.',
   },
   {
-    icon: UserCheck,
-    title: 'Clients onboard\nthemselves',
-    description: 'Forms, contracts and data collection handled automatically — no chasing, no admin.',
+    icon: Target,
+    title: 'Tailored Strategies',
+    description: 'Solutions designed around your unique goals.',
   },
   {
-    icon: CalendarCheck,
-    title: 'Your calendar runs your workflow',
-    description: 'Appointments trigger actions, tasks and follow-ups — built around how you actually work.',
+    icon: ShieldCheck,
+    title: 'Trusted & Transparent',
+    description: 'Clear communication and complete confidentiality.',
   },
   {
-    icon: CreditCard,
-    title: "You always know who's paid (and who isn't)",
-    description: 'Invoicing, tracking and reminders built into your pipeline.',
-  },
-  {
-    icon: FileText,
-    title: 'Every case organised automatically',
-    description: 'Documents, compliance and client records generated and stored without manual work.',
-  },
-  {
-    icon: MessageSquare,
-    title: 'No more\nchasing clients',
-    description: 'Emails, reminders and updates sent automatically at the right time.',
+    icon: TrendingUp,
+    title: 'Long-Term Growth',
+    description: 'Sustainable investments. Stronger portfolios.',
   },
 ]
 
 export default function WhatWeBuild() {
   return (
-    <section id="what-we-build" className="py-20 bg-white" aria-label="What we build">
-      <div className="max-w-6xl mx-auto px-6">
-
-        {/* Header */}
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-brand-green uppercase tracking-widest mb-4">What we build</p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.1]">
-            A complete operating system<br />
-            <span className="text-brand-green">for your business.</span>
-          </h2>
-          <p className="mt-5 text-lg text-gray-600 max-w-2xl mx-auto">
-            We don't install software.<br />We build your business a system, from lead to completion,<br />that runs automatically.
+    <>
+      {/* ── Trust Bar ── */}
+      <section className="py-16 bg-white border-b border-gray-100" aria-label="Why choose us">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-brand-green text-xs font-semibold tracking-[0.2em] uppercase mb-10">
+            Trusted by sellers and investors
           </p>
-        </div>
-
-        {/* Pipeline flow */}
-        <div className="bg-gray-50 border border-gray-100 rounded-2xl px-6 py-5 mb-6">
-          <div className="flex items-center justify-between gap-2 overflow-x-auto">
-            {pipeline.map((step, i) => {
-              const Icon = step.icon
-              return (
-                <div key={i} className="flex items-center gap-2 flex-shrink-0">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-green-50 border border-green-100 flex items-center justify-center flex-shrink-0">
-                      <Icon size={15} className="text-brand-green" />
-                    </div>
-                    <span className="text-xs text-gray-600 whitespace-pre-line leading-tight font-medium">{step.label}</span>
-                  </div>
-                  {i < pipeline.length - 1 && (
-                    <span className="text-gray-300 text-lg mx-1 flex-shrink-0">›</span>
-                  )}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {trustItems.map(({ icon: Icon, title, description }) => (
+              <div key={title} className="flex items-start gap-4">
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border border-brand-green/30">
+                  <Icon size={20} className="text-brand-green" />
                 </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Connected line */}
-        <p className="text-center text-sm mb-12">
-          <span className="font-semibold text-brand-green">Everything is connected.</span>
-          <span className="text-gray-500"> When one thing happens, the rest follows automatically.</span>
-        </p>
-
-        {/* Capability cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {capabilities.map((cap) => {
-            const Icon = cap.icon
-            return (
-              <div key={cap.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon size={20} className="text-brand-green" />
-                  </div>
-                  <h3 className="font-bold text-gray-900 leading-snug whitespace-pre-line">{cap.title}</h3>
+                <div>
+                  <p className="font-bold text-gray-900 text-sm mb-1">{title}</p>
+                  <p className="text-xs text-gray-500 leading-relaxed">{description}</p>
                 </div>
-                <div className="w-8 h-0.5 bg-brand-green mb-3 rounded-full ml-[52px]" />
-                <p className="text-sm text-gray-500 leading-relaxed">{cap.description}</p>
               </div>
-            )
-          })}
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Bottom banner */}
-        <div className="mt-10 bg-gray-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
-              <ShieldCheck size={20} className="text-brand-green" />
+      {/* ── For Sellers / For Investors cards ── */}
+      <section
+        aria-label="For sellers and investors"
+        style={{ backgroundColor: '#EDE8DF' }}
+        className="py-10 px-6"
+      >
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6">
+
+          {/* FOR SELLERS — text left, image right */}
+          <div id="sellers" className="bg-white overflow-hidden flex flex-row min-h-[280px]">
+            <div className="flex-1 p-8 lg:p-10 flex flex-col justify-center min-w-0">
+              <p className="text-brand-green text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+                For Sellers
+              </p>
+              <h2 className="text-2xl font-extrabold text-gray-900 leading-tight mb-4">
+                A better way to{' '}
+                <span className="text-brand-green">sell</span> your property.
+              </h2>
+              <div className="w-8 h-0.5 bg-brand-green mb-5" />
+              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                We connect you with serious, experienced investors ready to move
+                quickly and secure strong value for your property.
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 bg-brand-green text-white font-semibold text-xs px-6 py-3 hover:bg-amber-600 transition-colors tracking-widest uppercase self-start"
+              >
+                Learn more
+                <ArrowRight size={14} />
+              </a>
             </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">
-                Built for regulated professionals who need{' '}
-                <span className="text-brand-green">systems that just work.</span>
-              </p>
-              <p className="text-sm text-gray-500 mt-0.5">
-                Used by brokers, investors and legal firms across finance, property and legal services.
-              </p>
+            <div className="w-2/5 flex-shrink-0 overflow-hidden">
+              <img
+                src="/middle_left.png"
+                alt="Elegant property interior"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
-          <p className="text-sm font-semibold text-gray-700 flex-shrink-0">
-            Brokers. Investors.<br className="hidden sm:block" /> Legal firms.
-          </p>
-        </div>
 
-      </div>
-    </section>
+          {/* FOR INVESTORS — text left, image right */}
+          <div id="investors" className="bg-brand-dark overflow-hidden flex flex-row min-h-[280px]">
+            <div className="flex-1 p-8 lg:p-10 flex flex-col justify-center min-w-0">
+              <p className="text-brand-green text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+                For Investors
+              </p>
+              <h2 className="text-2xl font-extrabold text-white leading-tight mb-4">
+                Quality properties. Built for{' '}
+                <span className="text-brand-green">growth</span>.
+              </h2>
+              <div className="w-8 h-0.5 bg-brand-green mb-5" />
+              <p className="text-white/70 text-sm leading-relaxed mb-8">
+                Access handpicked opportunities aligned with our investment
+                criteria and long-term portfolio growth.
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 border border-white/40 text-white font-semibold text-xs px-6 py-3 hover:border-brand-green hover:text-brand-green transition-colors tracking-widest uppercase self-start"
+              >
+                View opportunities
+                <ArrowRight size={14} />
+              </a>
+            </div>
+            <div className="w-2/5 flex-shrink-0 overflow-hidden">
+              <img
+                src="/middle_right.png"
+                alt="Premium investment property"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
   )
 }

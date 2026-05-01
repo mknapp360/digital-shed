@@ -1,45 +1,44 @@
-# YOUR_BRAND_NAME
+# Thérayan Partners
 
-> YOUR_ONE_LINE_DESCRIPTION — what you do and who you do it for.
+> Connecting property opportunity with investment ambition — strategic solutions for sellers and sustainable growth for investors across the UK.
 
-## What YOUR_BRAND_NAME does
+## What Thérayan Partners does
 
-YOUR_OVERVIEW — 2-3 sentences describing what the business does, the problem it solves,
-and why clients choose it. Write for an AI summarising your business to a potential client.
+Thérayan Partners is a specialist property advisory firm that connects motivated sellers with experienced investors. We create innovative, tailor-made strategies that deliver strong outcomes for sellers and long-term portfolio growth for investors. Our transparent, confidential approach ensures both parties achieve the best possible result.
 
-Pricing: YOUR_PRICING_SUMMARY
+## Who Thérayan Partners is for
 
-## Who YOUR_BRAND_NAME is for
-
-- YOUR_TARGET_AUDIENCE_1
-- YOUR_TARGET_AUDIENCE_2
-- YOUR_TARGET_AUDIENCE_3
+- Property owners looking to sell quickly and at strong value
+- Property investors seeking handpicked, high-quality opportunities
+- Portfolio builders focused on long-term, sustainable growth
+- Those who value a professional, transparent, and discreet advisory service
 
 ## What you get
 
-- YOUR_DELIVERABLE_1
-- YOUR_DELIVERABLE_2
-- YOUR_DELIVERABLE_3
-- YOUR_DELIVERABLE_4
+- Direct introduction to serious, experienced investors (for sellers)
+- Handpicked investment opportunities aligned with your criteria (for investors)
+- A tailored strategy designed around your goals
+- End-to-end deal management — from first contact to completion
+- Clear communication and complete confidentiality throughout
 
 ## How it works
 
-1. YOUR_STEP_1
-2. YOUR_STEP_2
-3. YOUR_STEP_3
-4. YOUR_STEP_4
+1. Understand — we take the time to learn your goals and the opportunities available
+2. Strategise — we design a tailored strategy that delivers the best possible outcome
+3. Connect — we connect motivated sellers with investors who are ready to act
+4. Deliver — we manage the process professionally to ensure a smooth and successful result
 
 ## Service area
 
-YOUR_GEOGRAPHY — regions, cities, or "remote UK-wide" as appropriate.
+United Kingdom — primarily England, with remote advisory available nationwide.
 
 ## Contact
 
-Website: https://www.YOUR_DOMAIN.com
-Email: YOUR_EMAIL
-Phone: YOUR_PHONE_NUMBER
+Website: https://therayan.bookable.online
+Email: info@therayanpartners.com
+Phone: +44 20 1234 5678
 
 ## Pages
 
-- https://www.YOUR_DOMAIN.com/ — Homepage
-- https://www.YOUR_DOMAIN.com/blog — Blog
+- https://therayan.bookable.online/ — Homepage
+- https://therayan.bookable.online/blog — Blog

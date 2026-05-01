@@ -1,13 +1,10 @@
-// ─────────────────────────────────────────────────────────────
-// TEMPLATE: Replace all YOUR_* placeholders before going live
-// ─────────────────────────────────────────────────────────────
-
-const SITE_URL = 'https://www.YOUR_DOMAIN.com'
-const BRAND_NAME = 'YOUR_BRAND_NAME'
+const SITE_URL = 'https://therayan.bookable.online'
+const BRAND_NAME = 'Thérayan Partners'
 
 export default function Head() {
-  const title = `${BRAND_NAME} — YOUR_TITLE_TAG`
-  const description = 'YOUR_META_DESCRIPTION — keep under 160 characters.'
+  const title = `${BRAND_NAME} — Connecting Property Opportunity with Investment Ambition`
+  const description =
+    'Thérayan Partners connects motivated property sellers with experienced investors. Tailored strategies, transparent process, and long-term portfolio growth.'
 
   const schema = {
     '@context': 'https://schema.org',
@@ -19,23 +16,25 @@ export default function Head() {
         url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: `${SITE_URL}/favicon.svg`,
+          url: `${SITE_URL}/logo.png`,
         },
-        description: 'YOUR_ORGANIZATION_DESCRIPTION',
+        description:
+          'Thérayan Partners specialises in connecting property sellers with investors, delivering tailored strategies and sustainable portfolio growth.',
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'sales',
-          email: 'YOUR_EMAIL',
+          telephone: '+44-20-1234-5678',
+          email: 'info@therayanpartners.com',
           availableLanguage: 'English',
         },
         areaServed: [
-          // Add your service areas
-          { '@type': 'AdministrativeArea', name: 'YOUR_REGION' },
+          { '@type': 'AdministrativeArea', name: 'United Kingdom' },
         ],
         knowsAbout: [
-          // Add your areas of expertise
-          'YOUR_SERVICE_1',
-          'YOUR_SERVICE_2',
+          'Property investment',
+          'Real estate strategy',
+          'Portfolio growth',
+          'Property sales',
         ],
         sameAs: [],
       },
@@ -49,26 +48,37 @@ export default function Head() {
       {
         '@type': 'Service',
         '@id': `${SITE_URL}/#service`,
-        name: 'YOUR_SERVICE_NAME',
+        name: 'Property Investment & Sales Advisory',
         provider: { '@id': `${SITE_URL}/#organization` },
-        description: 'YOUR_SERVICE_DESCRIPTION',
-        offers: {
-          '@type': 'Offer',
-          price: 'YOUR_SETUP_PRICE',
-          priceCurrency: 'GBP',
-          description: 'YOUR_PRICING_DESCRIPTION',
-        },
+        description:
+          'Connecting property sellers with investors through tailored, transparent strategies that deliver strong outcomes for all parties.',
+        areaServed: { '@type': 'AdministrativeArea', name: 'United Kingdom' },
       },
       {
         '@type': 'FAQPage',
         mainEntity: [
-          // Add your FAQs — each one is an indexable rich result in Google
           {
             '@type': 'Question',
-            name: 'YOUR_FAQ_QUESTION_1',
+            name: 'What does Thérayan Partners do?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'YOUR_FAQ_ANSWER_1',
+              text: 'Thérayan Partners connects motivated property sellers with experienced investors. We create tailored strategies that deliver strong outcomes for sellers and long-term growth for investors.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do I sell my property through Thérayan Partners?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Get in touch via our contact form or email. We will understand your goals, match you with suitable investors, and manage the process professionally from start to finish.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How can I invest through Thérayan Partners?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'We source and present handpicked investment opportunities aligned with your criteria and long-term portfolio growth objectives. Contact us to discuss your investment goals.',
             },
           },
         ],
@@ -80,7 +90,10 @@ export default function Head() {
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content="YOUR_KEYWORDS, comma, separated" />
+      <meta
+        name="keywords"
+        content="property investment, property sales, real estate UK, portfolio growth, property investors, sell my property, investment opportunities"
+      />
       <meta name="author" content={BRAND_NAME} />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={`${SITE_URL}/`} />

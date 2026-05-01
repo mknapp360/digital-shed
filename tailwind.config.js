@@ -9,9 +9,9 @@ export default {
     extend: {
       colors: {
         brand: {
-          green: '#YOUR_PRIMARY_COLOR',   // e.g. '#29ab00'
-          dark: '#YOUR_DARK_COLOR',       // e.g. '#1a1a2e'
-          grey: '#YOUR_GREY_COLOR',       // e.g. '#f5f5f7'
+          green: '#C9A96E',   // Therayan gold accent
+          dark: '#111111',    // near-black
+          grey: '#F5F5F5',    // light background
         },
       },
       fontFamily: {

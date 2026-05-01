@@ -1,78 +1,68 @@
-import { ArrowRight, Settings, Users, ShieldCheck, Plug } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
-interface HeroProps {
-  onQuiz: () => void
-}
-
-export default function Hero({ onQuiz }: HeroProps) {
+export default function Hero() {
   return (
-    <section className="pt-28 pb-16" aria-label="Hero">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section
+      className="relative bg-brand-dark pt-16 min-h-screen flex items-center overflow-hidden"
+      aria-label="Hero"
+    >
+      {/* Background hero image — right half blending in */}
+      <div
+        className="absolute inset-y-0 right-0 w-full lg:w-3/5"
+        aria-hidden="true"
+      >
+        <img
+          src="/hero.png"
+          alt=""
+          className="w-full h-full object-cover object-center opacity-60 lg:opacity-100"
+        />
+        {/* Gradient overlay — fades the image into the dark left panel */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent" />
+      </div>
 
-          {/* Left column */}
-          <div>
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
+        <div className="max-w-xl">
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
-              Your business<br />isn't broken.<br />
-              <span className="text-brand-green">Your systems are.</span>
-            </h1>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              We replace spreadsheets, paperwork, and admin with automation.
-            </p>
+          {/* Eyebrow */}
+          <p className="text-brand-green text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            Strategic solutions for sellers.&nbsp; Sustainable growth for investors.
+          </p>
 
-            {/* Pricing callout */}
-            <div className="flex items-start gap-4 bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 mb-6">
-              <Settings size={22} className="text-brand-green flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-semibold text-gray-900">Custom-built CRM &amp; Booking systems, no enterprise pricing</p>
-                <p className="text-sm text-gray-500 mt-0.5">From <span className="text-brand-green font-semibold">£75/month</span>. No per-user fees.</p>
-              </div>
-            </div>
+          {/* Divider */}
+          <div className="w-8 h-0.5 bg-brand-green mb-8" />
 
-            {/* Trust bullets */}
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <Users size={16} className="text-brand-green flex-shrink-0" />
-                Designed for regulated professionals drowning in admin.
-              </li>
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <ShieldCheck size={16} className="text-brand-green flex-shrink-0" />
-                Used by brokers, investors and legal firms.
-              </li>
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <Plug size={16} className="text-brand-green flex-shrink-0" />
-                Built to integrate with Xero, compliance platforms, and the tools your firm already uses.
-              </li>
-            </ul>
+          {/* Headline */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-8">
+            Connecting{' '}
+            <span className="text-brand-green">
+              property opportunity
+            </span>{' '}
+            with investment ambition.
+          </h1>
 
-            {/* CTA */}
-            <button
-              onClick={onQuiz}
-              className="inline-flex items-center gap-2 bg-brand-green text-white px-8 py-3.5 rounded-full font-semibold text-base hover:bg-green-700 transition-colors"
+          {/* Sub-copy */}
+          <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-md">
+            We create innovative, tailor-made strategies that deliver strong
+            outcomes for sellers and long-term growth for property investors.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-brand-green text-white font-semibold text-sm px-7 py-3.5 hover:bg-amber-600 transition-colors tracking-widest uppercase"
             >
-              Check your automation potential
-              <ArrowRight size={18} />
-            </button>
-
-            {/* Trust bar */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-6">
-              {['£500 setup', '£75/month', 'No per-user fees', 'Cancel any time'].map((item) => (
-                <span key={item} className="flex items-center gap-1.5 text-sm text-gray-500">
-                  <span className="text-brand-green font-bold">✓</span>
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right column — dashboard image */}
-          <div className="block mt-8 lg:mt-0">
-            <img
-              src="/dashboard.jpg"
-              alt="Bookable CRM dashboard"
-              className="w-full rounded-2xl shadow-2xl"
-            />
+              I want to sell
+              <ArrowRight size={16} />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 border border-white/60 text-white font-semibold text-sm px-7 py-3.5 hover:border-brand-green hover:text-brand-green transition-colors tracking-widest uppercase"
+            >
+              I want to invest
+              <ArrowRight size={16} />
+            </a>
           </div>
 
         </div>

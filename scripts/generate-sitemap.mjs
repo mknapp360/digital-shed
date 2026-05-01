@@ -9,20 +9,22 @@ import { dirname, join } from 'path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
-const BASE = 'https://www.YOUR_DOMAIN.com'
+const BASE = 'https://therayan.bookable.online'
 const today = new Date().toISOString().split('T')[0]
 
 // Replace with the client's sector and location slugs
 // These generate /sector/location landing pages for local SEO
 const SECTORS = [
-  'your-sector-1',
-  'your-sector-2',
+  'property-investment',
+  'property-sales',
 ]
 
 const LOCATIONS = [
-  'your-city-1',
-  'your-city-2',
-  'your-region-1',
+  'london',
+  'manchester',
+  'birmingham',
+  'leeds',
+  'bristol',
 ]
 
 function entry(loc, priority = '0.7', changefreq = 'monthly') {
